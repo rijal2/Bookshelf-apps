@@ -8,22 +8,9 @@ const rak1 = document.querySelector("#rak1");
 
 //No. 4
 
-
-
-// No.5
-
-// No.6
-
-// No. 7
-
-// No. 8
-
-// No. 9
-
-// No. 10
-
-
-
+const buat = function(){
+    
+}
 
 // membuat form submit bekerja dengan baik
 inputBook.addEventListener("submit", simpan); // No.1
@@ -33,14 +20,10 @@ function simpan(e){
 
     // membuat elemen baru jika buku selesai dibaca
     // No. 2
-    const inputBookIsComplete = document.querySelector("#inputBookIsComplete");
-    const contrengGak = document.createTextNode(inputBookIsComplete.value);
-    if(contrengGak == true){
-        // No. 3
-        const completeBookshelfList = document.createElement('div');
-        completeBookshelfList.className = "book_list";
-
-         // Membuat list artikel buku
+    const inputBookIsComplete = document.querySelectorAll("input[type=checkbox")[0];
+    
+    if(inputBookIsComplete.checked == true){
+        // Membuat list artikel buku
         // No.4
         const newArticle = document.createElement('article');
         newArticle.className = "book_item";
@@ -64,10 +47,7 @@ function simpan(e){
                 const tahun = document.createElement('p');
                 tahun.appendChild(angkaTahun);
 
-            // Memasukkan list buku kedalam elemen artikel
-            newArticle.appendChild(judulBuku);
-            newArticle.appendChild(penulis);
-            newArticle.appendChild(tahun);
+            
 
         // Menyusun div action
         // No. 8
@@ -91,17 +71,20 @@ function simpan(e){
             action.appendChild(status);
             action.appendChild(hapus);
 
-            // Memasukkan div action ke dalam artikel
+            // Memasukkan list buku & div action kedalam elemen artikel
+            newArticle.appendChild(judulBuku);
+            newArticle.appendChild(penulis);
+            newArticle.appendChild(tahun);
             newArticle.appendChild(action);
+        // No. 3
+        const completeBookshelfList = document.createElement('div');
+        completeBookshelfList.className = "book_list";
         // Memasukkan elemen artikel dan div button kedalam div jenis buku
         completeBookshelfList.appendChild(newArticle);
         console.log(completeBookshelfList);
         rak2.appendChild(completeBookshelfList);
     } else {
-        const incompleteBookshelfList = document.createElement('div');
-        incompleteBookshelfList.className = "book_list";
-
-         // Membuat list artikel buku
+        // Membuat list artikel buku
         // No.4
         const newArticle = document.createElement('article');
         newArticle.className = "book_item";
@@ -125,10 +108,7 @@ function simpan(e){
                 const tahun = document.createElement('p');
                 tahun.appendChild(angkaTahun);
 
-            // Memasukkan list buku kedalam elemen artikel
-            newArticle.appendChild(judulBuku);
-            newArticle.appendChild(penulis);
-            newArticle.appendChild(tahun);
+            
 
         // Menyusun div action
         // No. 8
@@ -152,8 +132,14 @@ function simpan(e){
             action.appendChild(status);
             action.appendChild(hapus);
 
-            // Memasukkan div action ke dalam artikel
+            // Memasukkan list buku & div action kedalam elemen artikel
+            newArticle.appendChild(judulBuku);
+            newArticle.appendChild(penulis);
+            newArticle.appendChild(tahun);
             newArticle.appendChild(action);
+        const incompleteBookshelfList = document.createElement('div');
+        incompleteBookshelfList.className = "book_list";
+    
         // Memasukkan elemen artikel dan div button kedalam div jenis buku
         incompleteBookshelfList.appendChild(newArticle);
         console.log(incompleteBookshelfList);
