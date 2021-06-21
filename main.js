@@ -1,16 +1,16 @@
 
 // Seleksi element
 const inputBook = document.querySelector("#inputBook"); // No.1
-// No. 2
+
 const rak2 = document.querySelector("#rak2");
 const rak1 = document.querySelector("#rak1");
-// No.3
 
-//No. 4
-
-const buat = function(){
-    
+const kosongkan = function(){
+    inputBookTitle.value = "";
+    inputBookAuthor.value = "";
+    inputBookYear.value = "";
 }
+
 
 // membuat form submit bekerja dengan baik
 inputBook.addEventListener("submit", simpan); // No.1
@@ -19,12 +19,10 @@ function simpan(e){
     e.preventDefault();
 
     // membuat elemen baru jika buku selesai dibaca
-    // No. 2
     const inputBookIsComplete = document.querySelectorAll("input[type=checkbox")[0];
     
     if(inputBookIsComplete.checked == true){
         // Membuat list artikel buku
-        // No.4
         const newArticle = document.createElement('article');
         newArticle.className = "book_item";
 
@@ -83,6 +81,7 @@ function simpan(e){
         completeBookshelfList.appendChild(newArticle);
         console.log(completeBookshelfList);
         rak2.appendChild(completeBookshelfList);
+        kosongkan();
     } else {
         // Membuat list artikel buku
         // No.4
@@ -119,7 +118,7 @@ function simpan(e){
                 // No.9
                 const status = document.createElement("button");
                 status.className = "green"
-                const tulisanStatus = document.createTextNode("Belum Selesai Dibaca")
+                const tulisanStatus = document.createTextNode("Selesai Dibaca")
                 status.appendChild(tulisanStatus);
 
                 // No. 10
@@ -144,7 +143,10 @@ function simpan(e){
         incompleteBookshelfList.appendChild(newArticle);
         console.log(incompleteBookshelfList);
         rak1.appendChild(incompleteBookshelfList);
+        kosongkan();
     }
 
 }
 
+const hapusBuku = document.querySelectorAll(".red");
+console.log(hapusBuku);
