@@ -148,5 +148,30 @@ function simpan(e){
 
 }
 
-const hapusBuku = document.querySelectorAll(".red");
-console.log(hapusBuku);
+// Hapus Buku
+const bookShelf1 = document.querySelector("#rak1");
+
+bookShelf1.addEventListener('click', function(e){
+    if(e.target.className == 'red'){
+        const tanya = confirm("Apakah anda yakin ingin menghapus buku ini?");
+        if( tanya == true){
+        e.target.parentElement.parentElement.parentElement.style.display = 'none';
+        }
+    }
+})
+
+const bookShelf2 = document.querySelector("#rak2");
+
+bookShelf2.addEventListener('click', function(e){
+    if(e.target.className == 'red'){
+        const tanya = confirm("Apakah anda yakin ingin menghapus buku ini?");
+        if( tanya == true){
+            e.target.parentElement.parentElement.parentElement.style.display = 'none';
+        }
+    }
+})
+
+//Simpan ke local storage
+
+let keRak1 = [];
+let keRak2 = [];
