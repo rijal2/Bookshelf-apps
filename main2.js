@@ -27,8 +27,8 @@ function simpan (e){
     
     const confirmSimpan = confirm(`Apakah anda yakin ingin menambahkan buku dengan \nJudul : ${inputBookTitle.value}\nPenulis : ${inputBookAuthor.value}\nTahun : ${parseInt(inputBookYear.value)}`);
     if(confirmSimpan){
+        rakBuku.push(tampung);
     
-    return rakBuku.push(tampung);
     } 
     inputBookTitle.value = "";
     inputBookAuthor.value = "";
